@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>INST377 - Lab 4</title>
+        <link rel="stylesheet" href="Lab_4.css">
+    </head>
+    <body>
+        <h1 id="header">INST377 - Lab 4</h1>
+        <!-- Container for the first row of sections -->
+        <div class="top-container">
+            <!-- Username & Alert User -->
+            <div class="section1">
+                <label for="name">Name: </label>
+                <input type="text" id="name" placeholder="John Smith" required>
+                <button onclick="alertUser()" type="button">Alert Me!</button>
+            </div>
+    
+            <!-- Change Background Color -->
+            <div class="section2">
+                <button onclick="changeColor()" type="button">Change The Color</button>
+            </div>
+        </div>
+        
+        <!-- Container for the second row of sections -->
+        <div class="bottom-container">
+            <!-- Validating The Right Text -->
+            <div class="section3">
+                <label for="validate">Text Tester:</label>
+                <input type="text" id="validate">
+                <button onclick="validateText()" type="button">Validate Text</button>
+            </div>
+
+            <!-- Add Text Button -->
+            <div class="section4">
+                <button onclick='addText()' type="button" id="txt">Add Text</button>
+            </div>
+        </div>
+    </form>
+
+        <!--JavaScript-->
+        <script type="text/javascript">
+            function alertUser(){
+                const usrname = document.getElementById('name');
+                if (usrname.value == '') {
+                    return false;
+                }else{
+                    alert('Hello ' + usrname.value + '!');
+                    usrname.value = '';
+                }
+            }
+            function changeColor(){
+                if (document.body.style.backgroundColor == 'blue'){
+                    const t = document.body.style.backgroundColor = 'purple';
+                }else{
+                const t = document.body.style.backgroundColor = 'blue';
+                }
+            }
+            function validateText(){
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                const inputField = document.getElementById('validate');
+                if (validation.test(inputField.value)) {
+                    alert("A special character has been detected")
+                }
+                else if (inputField.value == 'Hi!') {
+                    alert("How about...nah");
+                }else{
+                    inputField.value = '';
+                    return false;
+                }
+            }
+            function addText(){
+                const header = document.getElementById('header');
+                const newText = ' - Adding Text';
+                if (header.innerText.includes(newText)){
+                    return false;
+                }
+
+                header.innerText += ' - Adding Text';
+            }
+        </script>
+    </body>
+</html>
