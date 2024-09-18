@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>INST377 - Lab 4</title>
+        <style>
+            body {background-color:blue;}
+        </style>
+    </head>
+    <body>
+        <h1>INST377 - Lab 4</h1>
+        <form>
+            <label for="name">Name: </label>
+            <input type="text" id="name" placeholder="John Smith" required><br><br>
+
+            <button onclick="changeColor()" type="button">Change The Color</button><br><br>
+
+            <label for="validate">Text Tester:</label>
+            <input type="text" id="validate">
+            <button onclick="validateText()" type="button">Validate Text</button><br><br>
+
+            <input onclick='' type="button" id="txt">Add Text</button>
+
+        </form>
+        
+
+
+
+
+
+        <script type="text/javascript">
+            function changeColor(){
+                if (document.body.style.backgroundColor == 'blue'){
+                    const t = document.body.style.backgroundColor = 'purple';
+                }else{
+                const t = document.body.style.backgroundColor = 'blue';
+                }
+            }
+            function validateText(){
+                const inputField = document.getElementById('validate');
+                if (inputField.value == 'Hi!') {
+                    alert("How about...nah");
+                }else{
+                    inputField.value = '';
+                    return false;
+                }
+            }
+            function addText(){
+                const t = document.getElementById('txt');
+            }
+        </script>
+    </body>
+</html>
