@@ -1,0 +1,31 @@
+body {
+    background-color: blue;
+}
+.top-container,
+.bottom-container {
+    display: flex; 
+    gap: 20px; /* Adds space in-between the sections */
+}
+.section1,
+.section2,
+.section3,
+.section4 {
+    padding: 20px;
+    background-color: aquamarine;
+    border: 2px solid white; /* border always goes width, style, color */
+    border-radius: 5px;
+    margin: 5px;
+}
+.section1,
+.section3 {
+    width: 40%;
+}
+.section2,
+.section4 {
+    width: 35%;
+}
+.section2 button,
+.section4 button{
+    display: block;
+    margin: 0 auto;
+}
